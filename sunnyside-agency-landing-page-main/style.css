@@ -1,0 +1,406 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap");
+/*Animation*/
+@-webkit-keyframes slide-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+@-webkit-keyframes scale-animation {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale-animation {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*parametre de base*/
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  text-align: center;
+}
+
+main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Barlow", sans-serif;
+  overflow-x: hidden;
+}
+
+h1 {
+  position: absolute;
+  color: white;
+  font-size: 11vw;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  letter-spacing: 1vw;
+  top: 35vw;
+  -webkit-animation: scale-animation 1s;
+          animation: scale-animation 1s;
+}
+
+h2 {
+  color: #24303E;
+  font-size: 9vw;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  margin: 15vw 0 8vw 0;
+}
+
+h3 {
+  font-size: 5vw;
+  font-family: "Fraunces", serif;
+  color: hsl(210deg, 4%, 67%);
+  margin-top: 40vw;
+  letter-spacing: 1.5vw;
+}
+
+h4 {
+  font-family: "Fraunces", serif;
+  font-size: 5vw;
+  margin-top: 8vw;
+}
+
+h5 {
+  font-family: "Barlow", sans-serif;
+  color: #A7AAAD;
+  font-size: 4vw;
+  font-weight: 600;
+  margin-top: 4vw;
+}
+
+p {
+  margin: 0 10% 10%;
+  color: #808397;
+  font-weight: 600;
+  font-size: 4.5vw;
+  line-height: 7vw;
+}
+
+/*Header*/
+header {
+  overflow: hidden;
+}
+header .background {
+  width: 200vw;
+  height: 110vw;
+  margin-left: -49vw;
+}
+
+.logo {
+  width: 35vw;
+  height: 7vw;
+  margin: 6vw 0 0 5vw;
+}
+
+.menu {
+  position: absolute;
+  width: 6vw;
+  height: 5vw;
+  top: 6.5vw;
+  left: 85vw;
+}
+
+.arrow {
+  position: absolute;
+  width: 8vw;
+  height: 25vw;
+  top: 60vw;
+  left: 45vw;
+  -webkit-animation: slide-bottom 1.5s forwards;
+          animation: slide-bottom 1.5s forwards;
+}
+
+/*NAVBAR*/
+.hamburger {
+  display: none;
+}
+
+nav {
+  display: flex;
+  background-color: #3ebfff;
+  padding-bottom: 30vw;
+  width: 100vw;
+  height: 8vw;
+  color: #24303E;
+  font-size: 4.5vw;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+}
+nav ul {
+  color: #5B636D;
+  position: absolute;
+  background-color: hsla(0deg, 0%, 100%, 0.7);
+  width: 50vw;
+  height: 50vw;
+  right: 10vw;
+  top: 20vw;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 3.5vw;
+}
+nav ul li {
+  margin-top: 6vw;
+}
+nav ul li:hover {
+  color: hsl(51deg, 100%, 49%);
+  transition: 0.2s;
+}
+
+.triangle {
+  display: flex;
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-bottom: 7vw solid hsla(0deg, 0%, 100%, 0.7);
+  border-left: 7vw solid transparent;
+  top: 13vw;
+  right: 10vw;
+}
+
+.contact {
+  font-size: 3.5vw;
+  font-weight: 600;
+  background-color: hsl(51deg, 100%, 49%);
+  margin: 6vw 13vw;
+  padding: 2vw;
+  border-radius: 50px;
+  color: white;
+}
+.contact:hover {
+  outline: hsl(51deg, 100%, 49%) solid 0.4vw;
+  color: #5B636D;
+  background-color: transparent;
+  transition: 0.2s;
+}
+
+/* Pas eu le temps d'apprendre a faire appaître avec js */
+header:hover .hamburger {
+  display: block;
+}
+
+/*Début des images*/
+.egg img {
+  width: 100vw;
+  height: 85vw;
+  margin-top: -1vw;
+}
+
+/*premier paragraphe*/
+.divtext1 {
+  margin-bottom: 15vw;
+}
+
+.divtext1:hover h2 {
+  color: hsl(51deg, 100%, 49%);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+/*Creation surlignage et animation Learn More*/
+a {
+  width: 100vw;
+  color: #5B636D;
+  font-size: 4.5vw;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+}
+a:hover {
+  color: #24303E;
+  transition: 1s;
+}
+a:hover::before {
+  opacity: 1;
+  transition: 1s;
+}
+a::before {
+  content: "";
+  width: 35vw;
+  height: 2vw;
+  background: hsl(51deg, 100%, 49%);
+  position: absolute;
+  border-radius: 50px;
+  z-index: -1;
+  opacity: 0.2;
+  transform: translateY(3.8vw) translateX(-1vw);
+}
+
+/*deuxième image*/
+.wine img {
+  width: 100vw;
+  height: 85vw;
+}
+
+.divtext2 {
+  margin-bottom: 15vw;
+}
+.divtext2:hover h2 {
+  color: hsl(7deg, 99%, 70%);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.divtext2 a::before {
+  background-color: hsl(7deg, 99%, 70%);
+}
+
+/*3eme image + texte superposé*/
+.cherry img {
+  width: 192vw;
+  margin: 0 0 -75vw -45vw;
+}
+.cherry p {
+  color: hsl(167deg, 40%, 24%);
+  font-size: 3.7vw;
+  font-weight: 600;
+  line-height: 6vw;
+  margin-bottom: 15vw;
+}
+.cherry h2 {
+  color: hsl(167deg, 40%, 24%);
+  font-size: 8vw;
+}
+.cherry:hover p {
+  color: white;
+  transition: 0.6s;
+}
+.cherry:hover h2 {
+  color: white;
+  transition: 0.5s;
+}
+
+/*4eme image + texte superposé*/
+.orange img {
+  width: 192vw;
+  margin: 0 0 -75vw -45vw;
+}
+.orange p {
+  color: hsl(198deg, 62%, 26%);
+  font-size: 3.7vw;
+  font-weight: 600;
+  line-height: 6vw;
+  margin-bottom: 15vw;
+}
+.orange h2 {
+  color: hsl(198deg, 62%, 26%);
+  font-size: 8vw;
+}
+.orange:hover p {
+  color: white;
+  transition: 0.6s;
+}
+.orange:hover h2 {
+  color: white;
+  transition: 0.5s;
+}
+
+/*Testimonials */
+.testimonials img {
+  margin-top: 20vw;
+  width: 20vw;
+  border-radius: 50%;
+}
+.testimonials p {
+  font-size: 4.4vw;
+  color: #5B636D;
+  margin-top: 8vw;
+}
+
+/*Grid avec 4 images carré*/
+.image {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 25vw 0 -15vw 0;
+}
+
+.milk {
+  grid-area: 1/1/2/2;
+  width: 50vw;
+  height: 50vw;
+}
+
+.fruit {
+  grid-area: 1/2/2/3;
+  width: 50vw;
+  height: 50vw;
+}
+
+.cone {
+  grid-area: 2/1/3/2;
+  width: 50vw;
+  height: 50vw;
+}
+
+.sugar {
+  grid-area: 2/2/3/3;
+  width: 50vw;
+  height: 50vw;
+}
+
+/*Footer + logo + liens vers les réseau sociaux*/
+footer {
+  background-color: #90D4C6;
+}
+footer h2 {
+  padding-top: 12vw;
+  font-size: 8vw;
+  font-family: "Barlow", sans-serif;
+  color: #2C7566;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 4vw;
+  font-weight: 500;
+  color: #2C7566;
+  margin: 10vw 0 5vw 0;
+}
+footer ul :hover {
+  color: white;
+  transition: 0.2s;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  padding: 15vw 0;
+}
+.social img {
+  width: 4vw;
+  margin: 0 5vw;
+}
+
+/*je sais pas pourquoi si je ne mets pas ça alors quand la transition passe de 100 a 0% ca le fait sans transition*/
+* {
+  -webkit-animation: 0.5s;
+          animation: 0.5s;
+}/*# sourceMappingURL=style.css.map */
