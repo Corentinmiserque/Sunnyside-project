@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap");
 
 /*ps: si jamais tu vois pourquoi mes animations finissent de manière si brut je suis preneur*/
-
 /*Animation*/
 @keyframes slide-bottom {
     0% {
@@ -29,17 +28,17 @@
     list-style: none;
     
   }
-  body{
+body{
     text-align: center;
   }
-  main {
+main {
     position: relative;
     width: 100vw;
     height: 100vh;
     font-family: 'Barlow', sans-serif;
     overflow-x:hidden;
   }
-  h1{
+h1{
     color: white;
     font-size: 11vw;
     font-family: 'Fraunces', serif;
@@ -160,7 +159,7 @@ nav {
     right: 10vw;
    }
 /*le petit triangle au dessus du menu déroulant*/
-  .contact{
+.contact{
     font-size: 3.5vw;
     font-weight: 600;
     background-color:hsl(51, 100%, 49%); 
@@ -325,7 +324,7 @@ a{
     }
 }
 /*Grid avec 4 images carré*/
-    .image{
+.image{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -381,16 +380,15 @@ footer{
         }
     }
 }
-
 /* Desktop configuration j'ai préféré mettre une résolution qui peut fonctionner sur tablette aussi car je trouve ca plus joli le format desktop sur une tablette que le format mobile */
 @media screen and (min-width : 768px){  
+    /*je sais il faut pas utiliser le main ainsi je l'ai vu trop tard x) si je le remplace ça fait bug mon document*/
 main{
-        width: 100vw;
-        height: 100vh;
+
         text-align: left;
         }
-        /*header*/
-        header {
+/*header*/
+header {
             .logo{
             position: absolute;
             width: 18vw;
@@ -408,7 +406,6 @@ main{
             left: 48vw;
             }
             .background {  
-                opacity: 1;
                 margin-left: 0;
                 width: 100vw;
                 height: auto;
@@ -454,15 +451,13 @@ main{
                 display: none;
             }
         }
-        .hamburger{
+.hamburger{
             display: block;
         }
-         /*parent1*/
+/*parent1 desktop*/
 .parent1 {
     grid-template-columns: 50vw;
     grid-template-rows: 45vw;
-    
-    
     .egg img { grid-area: 1 / 2 / 2 / 3;
         width: 50vw;
         height: 45vw;
@@ -474,8 +469,7 @@ main{
             h2{
                 font-size: 3.7vw;
                 text-align: left;
-                margin-top: 8vw;
-                margin-bottom: 2vw;
+                margin: 8vw 0 2vw;
              }
             p{
                  font-size: 1.4vw;
@@ -488,7 +482,7 @@ main{
                 font-size: 1.3vw;
                 margin-top: -5vw;
                 &:hover{
-                    color:   #24303E;
+                    color: #24303E;
                     transition: 1s;
                     &::before{
                         opacity: 1;
@@ -505,7 +499,8 @@ main{
                 }
             }
         }  
-    .wine img{grid-area: 2 / 2 / 3 / 3;
+    .wine img{
+        grid-area: 2 / 2 / 3 / 3;
         width: 50vw;
         height: 45vw;
         margin-top: -0.2vw;
@@ -513,12 +508,10 @@ main{
     .text2 {
         grid-area: 2 / 2 / 3 / 3;;
             margin-left: 8vw;
-
             h2{
                 font-size: 3.7vw;
                 text-align: left;
-                margin-top: 8vw;
-                margin-bottom: 2vw;
+                margin: 8vw 0 2vw;
              }
             p{
                  font-size: 1.4vw;
@@ -548,7 +541,7 @@ main{
             }
     }
 }  
-     /*parent2*/
+ /*parent2 desktop*/
 .parent2 {
         grid-template-columns: 50vw;
         grid-template-rows: 45vw;
@@ -591,7 +584,7 @@ main{
         
     } 
 }
-/*parent2*/
+/*testimonials desktop*/
 .testimonials{
     h3{
         font-size: 1.7vw;
@@ -600,6 +593,7 @@ main{
         letter-spacing: 1vw;
     }
 }
+/*parent3 desktop*/
 .parent3 {
     display: grid;
     grid-template-columns:35vw;
@@ -634,14 +628,13 @@ main{
     .jennie { 
         grid-area: 1 / 3 / 2 / 4;
         width: 33vw;  }
-    }
+}
+/*parent4 (image) desktop*/
     .image {
         display: grid;
         grid-template-columns: 25vw;
         grid-template-rows: 1fr;
         margin-top: 10vw;
-        
-        
         .milk{ 
             grid-area: 1 / 1 / 2 / 2; 
             width: 25vw;
@@ -663,12 +656,12 @@ main{
             height: auto;
          }
 }
+/*footer desktop*/
 footer{ 
  h2{
     text-align: center;
     font-size: 2.3vw;
-    margin-top: 7vw;
-    margin-bottom: 8vw;
+    margin: 8vw 0;
  }
  ul{
     margin: -5vw 35vw 0;
@@ -678,7 +671,7 @@ footer{
  }
  .social{
     padding: 0;
-    margin: 2vw 40vw 0vw 40vw;
+    margin: 5vw 40vw 0vw 40vw;
     padding-bottom: 5vw;
     img{
         margin: 0 1vw;
