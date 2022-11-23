@@ -113,6 +113,7 @@ header .background {
   width: 200vw;
   height: 110vw;
   margin-left: -49vw;
+  margin-top: -0.1vw;
 }
 
 .logo {
@@ -131,9 +132,9 @@ header .background {
 
 .arrow {
   position: absolute;
-  width: 8vw;
-  height: 25vw;
-  top: 60vw;
+  width: 6vw;
+  height: 20vw;
+  top: 55vw;
   left: 45vw;
   -webkit-animation: slide-bottom 1.5s forwards;
           animation: slide-bottom 1.5s forwards;
@@ -207,25 +208,31 @@ header:hover .hamburger {
   display: block;
 }
 
-/*Début des images*/
+/*parent1*/
+.parent1 {
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 80vw;
+}
+
 .egg img {
+  grid-area: 1/1/2/2;
   width: 100vw;
   height: 85vw;
   margin-top: -1vw;
 }
 
-/*premier paragraphe*/
 .divtext1 {
+  grid-area: 2/1/3/2;
   margin-bottom: 15vw;
+  margin-top: 1vw;
 }
-
 .divtext1:hover h2 {
   color: hsl(51deg, 100%, 49%);
   opacity: 0.8;
   transition: 0.3s;
 }
 
-/*Creation surlignage et animation Learn More*/
 a {
   width: 100vw;
   color: #5B636D;
@@ -253,13 +260,14 @@ a::before {
   transform: translateY(3.8vw) translateX(-1vw);
 }
 
-/*deuxième image*/
 .wine img {
+  grid-area: 3/1/4/2;
   width: 100vw;
   height: 85vw;
 }
 
 .divtext2 {
+  grid-area: 4/1/5/2;
   margin-bottom: 15vw;
 }
 .divtext2:hover h2 {
@@ -271,52 +279,68 @@ a::before {
   background-color: hsl(7deg, 99%, 70%);
 }
 
-/*3eme image + texte superposé*/
-.cherry img {
+/*parent2*/
+.parent2 {
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 80vw;
+}
+
+.cherry {
+  grid-area: 1/1/2/2;
   width: 192vw;
   margin: 0 0 -75vw -45vw;
 }
-.cherry p {
+
+.cherrytext {
+  grid-area: 2/1/3/2;
+}
+.cherrytext p {
   color: hsl(167deg, 40%, 24%);
   font-size: 3.7vw;
   font-weight: 600;
   line-height: 6vw;
   margin-bottom: 15vw;
 }
-.cherry h2 {
+.cherrytext h2 {
   color: hsl(167deg, 40%, 24%);
   font-size: 8vw;
 }
-.cherry:hover p {
+.cherrytext:hover p {
   color: white;
   transition: 0.6s;
 }
-.cherry:hover h2 {
+.cherrytext:hover h2 {
   color: white;
   transition: 0.5s;
 }
 
-/*4eme image + texte superposé*/
-.orange img {
+.orange {
+  grid-area: 3/1/4/2;
   width: 192vw;
+  height: 160vw;
   margin: 0 0 -75vw -45vw;
 }
-.orange p {
+
+.orangetext {
+  grid-area: 4/1/5/2;
+}
+.orangetext p {
   color: hsl(198deg, 62%, 26%);
   font-size: 3.7vw;
   font-weight: 600;
   line-height: 6vw;
   margin-bottom: 15vw;
 }
-.orange h2 {
+.orangetext h2 {
   color: hsl(198deg, 62%, 26%);
   font-size: 8vw;
 }
-.orange:hover p {
+.orangetext:hover p {
   color: white;
   transition: 0.6s;
 }
-.orange:hover h2 {
+.orangetext:hover h2 {
   color: white;
   transition: 0.5s;
 }
@@ -332,6 +356,9 @@ a::before {
   color: #5B636D;
   margin-top: 8vw;
 }
+.testimonials h3 {
+  margin-top: 30vw;
+}
 
 /*Grid avec 4 images carré*/
 .image {
@@ -340,26 +367,22 @@ a::before {
   grid-template-rows: repeat(2, 1fr);
   margin: 25vw 0 -15vw 0;
 }
-
-.milk {
+.image .milk {
   grid-area: 1/1/2/2;
   width: 50vw;
   height: 50vw;
 }
-
-.fruit {
+.image .fruit {
   grid-area: 1/2/2/3;
   width: 50vw;
   height: 50vw;
 }
-
-.cone {
+.image .cone {
   grid-area: 2/1/3/2;
   width: 50vw;
   height: 50vw;
 }
-
-.sugar {
+.image .sugar {
   grid-area: 2/2/3/3;
   width: 50vw;
   height: 50vw;
@@ -388,19 +411,309 @@ footer ul :hover {
   color: white;
   transition: 0.2s;
 }
-
-.social {
+footer .social {
   display: flex;
   justify-content: center;
   padding: 15vw 0;
 }
-.social img {
+footer .social img {
   width: 4vw;
   margin: 0 5vw;
 }
 
-/*je sais pas pourquoi si je ne mets pas ça alors quand la transition passe de 100 a 0% ca le fait sans transition*/
-* {
-  -webkit-animation: 0.5s;
-          animation: 0.5s;
+/* Desktop configuration j'ai préféré mettre une résolution qui peut fonctionner sur tablette aussi car je trouve ca plus joli le format desktop sur une tablette que le format mobil */
+@media screen and (min-width: 768px) {
+  main {
+    width: 100vw;
+    height: 100vh;
+    text-align: left;
+  }
+  /*header*/
+  header .logo {
+    position: absolute;
+    width: 18vw;
+    height: 4vw;
+    top: -2vw;
+    left: 0vw;
+  }
+  header .menu {
+    display: none;
+  }
+  header .arrow {
+    width: 3vw;
+    height: 10vw;
+    top: 24vw;
+    left: 48vw;
+  }
+  header .background {
+    opacity: 1;
+    margin-left: 0;
+    width: 100vw;
+    height: auto;
+  }
+  header h1 {
+    width: 100vw;
+    font-size: 5vw;
+    top: 20vw;
+    text-align: center;
+  }
+  header nav {
+    padding-bottom: 3vw;
+  }
+  header nav ul {
+    display: flex;
+    color: white;
+    position: relative;
+    background-color: transparent;
+    margin-left: 70vw;
+    width: 50vw;
+    height: auto;
+    font-weight: 400;
+    font-size: 1.6vw;
+    margin-top: -21.5vw;
+  }
+  header nav ul li {
+    margin-right: 3vw;
+  }
+  header .contact {
+    color: #5B636D;
+    background-color: hsl(0deg, 0%, 100%);
+    font-size: 1.3vw;
+    padding: 1vw;
+    margin-top: 5.3vw;
+    margin-left: -1vw;
+  }
+  header .contact:hover {
+    color: white;
+    background-color: hsla(0deg, 0%, 100%, 0.3);
+    outline: none;
+  }
+  header .triangle {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  /*parent1*/
+  .parent1 {
+    grid-template-columns: 50vw;
+    grid-template-rows: 45vw;
+  }
+  .parent1 .egg img {
+    grid-area: 1/2/2/3;
+    width: 50vw;
+    height: 45vw;
+    margin-top: -0.3vw;
+  }
+  .parent1 .divtext1 {
+    grid-area: 1/1/2/2;
+    margin-left: 8vw;
+    margin-right: 2vw;
+  }
+  .parent1 .divtext1 h2 {
+    font-size: 3.7vw;
+    text-align: left;
+    margin-top: 8vw;
+    margin-bottom: 2vw;
+  }
+  .parent1 .divtext1 p {
+    font-size: 1.4vw;
+    line-height: 3vw;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 0;
+  }
+  .parent1 .divtext1 a {
+    font-size: 1.3vw;
+    margin-top: -5vw;
+  }
+  .parent1 .divtext1 a:hover {
+    color: #24303E;
+    transition: 1s;
+  }
+  .parent1 .divtext1 a:hover::before {
+    opacity: 1;
+    transition: 1s;
+  }
+  .parent1 .divtext1 a::before {
+    content: "";
+    width: 11vw;
+    height: 1vw;
+    background: hsl(51deg, 100%, 49%);
+    opacity: 0.2;
+    transform: translateY(1vw) translateX(-0.9vw);
+  }
+  .parent1 .wine img {
+    grid-area: 2/2/3/3;
+    width: 50vw;
+    height: 45vw;
+    margin-top: -0.5vw;
+  }
+  .parent1 .divtext2 {
+    grid-area: 2/2/3/3;
+    margin-left: 8vw;
+  }
+  .parent1 .divtext2 h2 {
+    font-size: 3.7vw;
+    text-align: left;
+    margin-top: 8vw;
+    margin-bottom: 2vw;
+  }
+  .parent1 .divtext2 p {
+    font-size: 1.4vw;
+    line-height: 3vw;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 0;
+  }
+  .parent1 .divtext2 a {
+    font-size: 1.3vw;
+    margin-top: -5vw;
+  }
+  .parent1 .divtext2 a:hover {
+    color: #24303E;
+    transition: 1s;
+  }
+  .parent1 .divtext2 a:hover::before {
+    opacity: 1;
+    transition: 1s;
+  }
+  .parent1 .divtext2 a::before {
+    content: "";
+    width: 11vw;
+    height: 1vw;
+    opacity: 0.2;
+    transform: translateY(1vw) translateX(-0.9vw);
+  }
+  /*parent2*/
+  .parent2 {
+    grid-template-columns: 50vw;
+    grid-template-rows: 45vw;
+    margin-top: -10vw;
+    text-align: center;
+  }
+  .parent2 h2 {
+    font-size: 2.2vw;
+    margin-bottom: 3vw;
+  }
+  .parent2 p {
+    font-size: 1.4vw;
+    line-height: 2vw;
+    margin: 0 20%;
+    font-weight: 500;
+  }
+  .parent2 .cherry {
+    grid-area: 1/1/2/2;
+    width: 50vw;
+    height: 45vw;
+    margin-left: 0;
+  }
+  .parent2 .orange {
+    grid-area: 1/2/2/3;
+    width: 50vw;
+    height: 45vw;
+    margin-left: 0;
+  }
+  .parent2 .cherrytext {
+    grid-area: 2/1/3/2;
+    width: 50vw;
+    height: 45vw;
+    margin-top: -32vw;
+  }
+  .parent2 .orangetext {
+    grid-area: 2/2/3/3;
+    width: 50vw;
+    height: 45vw;
+    margin-top: -32vw;
+  }
+  /*parent2*/
+  .testimonials h3 {
+    font-size: 1.7vw;
+    text-align: center;
+    margin-top: 0vw;
+    letter-spacing: 1vw;
+  }
+  .parent3 {
+    display: grid;
+    grid-template-columns: 35 30 35vw;
+    grid-template-rows: 1fr;
+    text-align: center;
+    margin-top: -10vw;
+  }
+  .parent3 p {
+    font-size: 1.5vw;
+    line-height: 2vw;
+    margin: 0 5%;
+    font-weight: 500;
+  }
+  .parent3 img {
+    width: 6vw;
+    margin-bottom: 5vw;
+  }
+  .parent3 h4 {
+    font-size: 1.9vw;
+  }
+  .parent3 h5 {
+    font-size: 1.5vw;
+    margin-top: 1vw;
+  }
+  .parent3 .emily {
+    grid-area: 1/1/2/2;
+    width: 33vw;
+  }
+  .parent3 .thomas {
+    grid-area: 1/2/2/3;
+    width: 33vw;
+  }
+  .parent3 .jennie {
+    grid-area: 1/3/2/4;
+    width: 33vw;
+  }
+  .image {
+    display: grid;
+    grid-template-columns: 25vw;
+    grid-template-rows: 1fr;
+    margin-top: 10vw;
+  }
+  .image .milk {
+    grid-area: 1/1/2/2;
+    width: 25vw;
+    height: auto;
+  }
+  .image .fruit {
+    grid-area: 1/2/2/3;
+    width: 25vw;
+    height: auto;
+  }
+  .image .cone {
+    grid-area: 1/3/2/4;
+    width: 25vw;
+    height: auto;
+  }
+  .image .sugar {
+    grid-area: 1/4/2/5;
+    width: 25vw;
+    height: auto;
+  }
+  footer h2 {
+    text-align: center;
+    font-size: 2.3vw;
+    margin-top: 7vw;
+    margin-bottom: 8vw;
+  }
+  footer ul {
+    margin: -5vw 35vw 0;
+  }
+  footer li {
+    font-size: 1.5vw;
+  }
+  footer .social {
+    padding: 0;
+    margin: 7vw 30vw 0vw 30vw;
+    padding-bottom: 5vw;
+  }
+  footer .social img {
+    margin: 0 1vw;
+    width: 1.8vw;
+  }
 }/*# sourceMappingURL=style.css.map */
