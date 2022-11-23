@@ -409,12 +409,11 @@ footer ul :hover {
 footer .social {
   display: flex;
   justify-content: center;
-  padding: 15vw 0;
   margin: 2vw 25vw;
 }
 footer .social img {
   width: 4.5vw;
-  margin: 0 5vw;
+  margin: 10vw 5vw;
 }
 
 /* Desktop configuration j'ai préféré mettre une résolution qui peut fonctionner sur tablette aussi car je trouve ca plus joli le format desktop sur une tablette que le format mobile */
