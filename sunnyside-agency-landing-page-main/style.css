@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap");
+/*ps: si jamais tu vois pourquoi mes animations finissent de manière si brut je suis preneur*/
 /*Animation*/
 @-webkit-keyframes slide-bottom {
   0% {
@@ -56,15 +57,11 @@ main {
 }
 
 h1 {
-  position: absolute;
   color: white;
   font-size: 11vw;
   font-family: "Fraunces", serif;
   font-weight: 900;
   letter-spacing: 1vw;
-  top: 35vw;
-  -webkit-animation: scale-animation 1s;
-          animation: scale-animation 1s;
 }
 
 h2 {
@@ -105,7 +102,7 @@ p {
   line-height: 7vw;
 }
 
-/*Header*/
+/*contenu + image Header*/
 header {
   overflow: hidden;
 }
@@ -115,22 +112,25 @@ header .background {
   margin-left: -49vw;
   margin-top: -0.1vw;
 }
-
-.logo {
+header h1 {
+  position: absolute;
+  top: 35vw;
+  -webkit-animation: scale-animation 1s;
+          animation: scale-animation 1s;
+}
+header .logo {
   width: 35vw;
   height: 7vw;
   margin: 6vw 0 0 5vw;
 }
-
-.menu {
+header .menu {
   position: absolute;
   width: 6vw;
   height: 5vw;
   top: 6.5vw;
   left: 85vw;
 }
-
-.arrow {
+header .arrow {
   position: absolute;
   width: 6vw;
   height: 20vw;
@@ -140,7 +140,7 @@ header .background {
           animation: slide-bottom 1.5s forwards;
 }
 
-/*NAVBAR*/
+/*Navbar header*/
 .hamburger {
   display: none;
 }
@@ -176,6 +176,7 @@ nav ul li:hover {
   transition: 0.2s;
 }
 
+/*le petit triangle au dessus du menu déroulant*/
 .triangle {
   display: flex;
   position: absolute;
@@ -187,6 +188,7 @@ nav ul li:hover {
   right: 10vw;
 }
 
+/*le petit triangle au dessus du menu déroulant*/
 .contact {
   font-size: 3.5vw;
   font-weight: 600;
@@ -214,41 +216,37 @@ header:hover .hamburger {
   grid-template-columns: 100vw;
   grid-template-rows: 80vw;
 }
-
-.egg img {
+.parent1 .egg img {
   grid-area: 1/1/2/2;
   width: 100vw;
   height: 85vw;
   margin-top: -1vw;
 }
-
-.divtext1 {
+.parent1 .text1 {
   grid-area: 2/1/3/2;
-  margin-bottom: 15vw;
-  margin-top: 1vw;
+  margin: 1vw 0 15vw 0;
 }
-.divtext1:hover h2 {
+.parent1 .text1:hover h2 {
   color: hsl(51deg, 100%, 49%);
   opacity: 0.8;
   transition: 0.3s;
 }
-
-a {
+.parent1 a {
   width: 100vw;
   color: #5B636D;
   font-size: 4.5vw;
   font-family: "Fraunces", serif;
   font-weight: 900;
 }
-a:hover {
+.parent1 a:hover {
   color: #24303E;
   transition: 1s;
 }
-a:hover::before {
+.parent1 a:hover::before {
   opacity: 1;
   transition: 1s;
 }
-a::before {
+.parent1 a::before {
   content: "";
   width: 35vw;
   height: 2vw;
@@ -259,23 +257,21 @@ a::before {
   opacity: 0.2;
   transform: translateY(3.8vw) translateX(-1vw);
 }
-
-.wine img {
+.parent1 .wine img {
   grid-area: 3/1/4/2;
   width: 100vw;
   height: 85vw;
 }
-
-.divtext2 {
+.parent1 .text2 {
   grid-area: 4/1/5/2;
   margin-bottom: 15vw;
 }
-.divtext2:hover h2 {
+.parent1 .text2:hover h2 {
   color: hsl(7deg, 99%, 70%);
   opacity: 0.8;
   transition: 0.3s;
 }
-.divtext2 a::before {
+.parent1 .text2 a::before {
   background-color: hsl(7deg, 99%, 70%);
 }
 
@@ -285,62 +281,60 @@ a::before {
   grid-template-columns: 100vw;
   grid-template-rows: 80vw;
 }
-
-.cherry {
-  grid-area: 1/1/2/2;
-  width: 192vw;
-  margin: 0 0 -75vw -45vw;
-}
-
-.cherrytext {
-  grid-area: 2/1/3/2;
-}
-.cherrytext p {
-  color: hsl(167deg, 40%, 24%);
+.parent2 p {
   font-size: 3.7vw;
   font-weight: 600;
   line-height: 6vw;
   margin-bottom: 15vw;
 }
-.cherrytext h2 {
-  color: hsl(167deg, 40%, 24%);
+.parent2 .cherry {
+  grid-area: 1/1/2/2;
+  width: 192vw;
+  margin: 0 0 -75vw -45vw;
+}
+.parent2 h2 {
   font-size: 8vw;
 }
-.cherrytext:hover p {
+.parent2 .cherrytext {
+  grid-area: 2/1/3/2;
+}
+.parent2 .cherrytext p {
+  color: hsl(167deg, 40%, 24%);
+  font-weight: 600;
+  line-height: 6vw;
+  margin-bottom: 15vw;
+}
+.parent2 .cherrytext h2 {
+  color: hsl(167deg, 40%, 24%);
+}
+.parent2 .cherrytext:hover p {
   color: white;
   transition: 0.6s;
 }
-.cherrytext:hover h2 {
+.parent2 .cherrytext:hover h2 {
   color: white;
   transition: 0.5s;
 }
-
-.orange {
+.parent2 .orange {
   grid-area: 3/1/4/2;
   width: 192vw;
   height: 160vw;
   margin: 0 0 -75vw -45vw;
 }
-
-.orangetext {
+.parent2 .orangetext {
   grid-area: 4/1/5/2;
 }
-.orangetext p {
+.parent2 .orangetext p {
   color: hsl(198deg, 62%, 26%);
-  font-size: 3.7vw;
-  font-weight: 600;
-  line-height: 6vw;
-  margin-bottom: 15vw;
 }
-.orangetext h2 {
+.parent2 .orangetext h2 {
   color: hsl(198deg, 62%, 26%);
-  font-size: 8vw;
 }
-.orangetext:hover p {
+.parent2 .orangetext:hover p {
   color: white;
   transition: 0.6s;
 }
-.orangetext:hover h2 {
+.parent2 .orangetext:hover h2 {
   color: white;
   transition: 0.5s;
 }
@@ -397,6 +391,7 @@ footer h2 {
   font-size: 8vw;
   font-family: "Barlow", sans-serif;
   color: #2C7566;
+  font-weight: 800;
 }
 footer ul {
   display: flex;
@@ -415,13 +410,14 @@ footer .social {
   display: flex;
   justify-content: center;
   padding: 15vw 0;
+  margin: 2vw 25vw;
 }
 footer .social img {
-  width: 4vw;
+  width: 4.5vw;
   margin: 0 5vw;
 }
 
-/* Desktop configuration j'ai préféré mettre une résolution qui peut fonctionner sur tablette aussi car je trouve ca plus joli le format desktop sur une tablette que le format mobil */
+/* Desktop configuration j'ai préféré mettre une résolution qui peut fonctionner sur tablette aussi car je trouve ca plus joli le format desktop sur une tablette que le format mobile */
 @media screen and (min-width: 768px) {
   main {
     width: 100vw;
@@ -503,39 +499,39 @@ footer .social img {
     grid-area: 1/2/2/3;
     width: 50vw;
     height: 45vw;
-    margin-top: -0.3vw;
+    margin-top: -0.2vw;
   }
-  .parent1 .divtext1 {
+  .parent1 .text1 {
     grid-area: 1/1/2/2;
     margin-left: 8vw;
     margin-right: 2vw;
   }
-  .parent1 .divtext1 h2 {
+  .parent1 .text1 h2 {
     font-size: 3.7vw;
     text-align: left;
     margin-top: 8vw;
     margin-bottom: 2vw;
   }
-  .parent1 .divtext1 p {
+  .parent1 .text1 p {
     font-size: 1.4vw;
     line-height: 3vw;
     font-weight: 500;
     text-align: left;
     margin-left: 0;
   }
-  .parent1 .divtext1 a {
+  .parent1 .text1 a {
     font-size: 1.3vw;
     margin-top: -5vw;
   }
-  .parent1 .divtext1 a:hover {
+  .parent1 .text1 a:hover {
     color: #24303E;
     transition: 1s;
   }
-  .parent1 .divtext1 a:hover::before {
+  .parent1 .text1 a:hover::before {
     opacity: 1;
     transition: 1s;
   }
-  .parent1 .divtext1 a::before {
+  .parent1 .text1 a::before {
     content: "";
     width: 11vw;
     height: 1vw;
@@ -547,38 +543,38 @@ footer .social img {
     grid-area: 2/2/3/3;
     width: 50vw;
     height: 45vw;
-    margin-top: -0.5vw;
+    margin-top: -0.2vw;
   }
-  .parent1 .divtext2 {
+  .parent1 .text2 {
     grid-area: 2/2/3/3;
     margin-left: 8vw;
   }
-  .parent1 .divtext2 h2 {
+  .parent1 .text2 h2 {
     font-size: 3.7vw;
     text-align: left;
     margin-top: 8vw;
     margin-bottom: 2vw;
   }
-  .parent1 .divtext2 p {
+  .parent1 .text2 p {
     font-size: 1.4vw;
     line-height: 3vw;
     font-weight: 500;
     text-align: left;
     margin-left: 0;
   }
-  .parent1 .divtext2 a {
+  .parent1 .text2 a {
     font-size: 1.3vw;
     margin-top: -5vw;
   }
-  .parent1 .divtext2 a:hover {
+  .parent1 .text2 a:hover {
     color: #24303E;
     transition: 1s;
   }
-  .parent1 .divtext2 a:hover::before {
+  .parent1 .text2 a:hover::before {
     opacity: 1;
     transition: 1s;
   }
-  .parent1 .divtext2 a::before {
+  .parent1 .text2 a::before {
     content: "";
     width: 11vw;
     height: 1vw;
@@ -620,6 +616,9 @@ footer .social img {
     height: 45vw;
     margin-top: -32vw;
   }
+  .parent2 .cherrytext p {
+    line-height: 2vw;
+  }
   .parent2 .orangetext {
     grid-area: 2/2/3/3;
     width: 50vw;
@@ -635,7 +634,7 @@ footer .social img {
   }
   .parent3 {
     display: grid;
-    grid-template-columns: 35 30 35vw;
+    grid-template-columns: 35vw;
     grid-template-rows: 1fr;
     text-align: center;
     margin-top: -10vw;
@@ -709,11 +708,11 @@ footer .social img {
   }
   footer .social {
     padding: 0;
-    margin: 7vw 30vw 0vw 30vw;
+    margin: 2vw 40vw 0vw 40vw;
     padding-bottom: 5vw;
   }
   footer .social img {
     margin: 0 1vw;
-    width: 1.8vw;
+    width: 1.5vw;
   }
 }/*# sourceMappingURL=style.css.map */
